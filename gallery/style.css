@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+    font-family: "MaplestoryOTFBold";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SBAggroB";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Freesentation-9Black";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+body {
+    overflow: hidden;
+    background-color: #fcf6f5;
+}
+
+.gallery-container {
+    margin-left: 5em;
+    width: 100% - 5em;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gallery-title {
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font-family: "Poppins", "Freesentation-9Black", sans-serif;
+    font-size: 5em;
+    font-weight: 700;
+    color: #7b9acc;
+}
+
+/* panorama gallery */
+.gallery-wrapper {
+    width: 1100px;
+    height: 650px;
+    z-index: 1;
+    background-color: transparent;
+
+    position: relative;
+}
+
+.section {
+    position: absolute;
+    z-index: 0;
+    width: 50%;
+    height: 33.33%;
+    overflow: hidden;
+    cursor: pointer;
+    transform: scale(1);
+    will-change: transform, contents;
+    transition-property: all;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    /* background: #fcf6f5; */
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section:nth-child(1) {
+    top: 0;
+    left: 0;
+    /* background: #f46a52; */
+}
+
+.section:nth-child(2) {
+    top: 0;
+    left: 50%;
+    /* background-color: blue; */
+}
+
+.section:nth-child(3) {
+    top: 33.33%;
+    left: 0;
+    /* background-color: yellow; */
+}
+
+.section:nth-child(4) {
+    top: 33.33%;
+    left: 50%;
+    /* background-color: green; */
+}
+
+.section:nth-child(5) {
+    top: 66.67%;
+    left: 0;
+    /* background-color: pink; */
+}
+
+.section:nth-child(6) {
+    top: 66.67%;
+    left: 50%;
+    /* background-color: gray; */
+}
+
+.section.is-expanded {
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    cursor: initial;
+}
+
+.has-expanded-item .section:not(.is-expanded) {
+    transform: scale(0);
+}
+
+.close-section {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+    transition: opacity 150ms linear;
+    will-change: opacity;
+}
+
+.section.is-expanded .close-section {
+    opacity: 1;
+    transition-delay: 500ms;
+    pointer-events: initial;
+}
+
+.panorama {
+    position: relative;
+    width: 95%;
+    height: 95%;
+}
+
+.section.is-expanded>.panorama {
+    width: 97.5%;
+    height: 97.5%;
+}
+
+.blur {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: 95%;
+    height: 95%;
+}
+
+
+/* user panorama */
+.input-wrapper {
+    width: 1100px;
+    display: flex;
+    flex-direction: row-reverse;
+    z-index: 1;
+}
+
+.input-file-trigger {
+    margin-right: 15px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    display: block;
+    padding: 14px 45px;
+    background: #7b9acc;
+    color: #fcf6f5;
+    font-family: "Poppins", "Pretendard-Regular", sans-serif;
+    font-size: 1em;
+    transition: all 0.4s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.input-file-trigger:hover {
+    color: #222;
+    background-color: #b3cde8;
+}
+
+.input-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 225px;
+    opacity: 0;
+    padding: 14px 0;
+    cursor: pointer;
+}
+
+.user-panorama-container {
+    display: flex;
+    flex-direction: row-reverse;
+    /* justify-content: center; */
+
+    position: relative;
+    width: 1100px;
+    height: 650px;
+    max-width: 1100px;
+    max-height: 650px;
+    z-index: 1;
+    background-color: transparent;
+}
+
+#user-panorama {
+    position: relative;
+    margin-right: 15px;
+    margin-top: 10px;
+    width: 98%;
+    height: 98%;
+    max-width: 98%;
+    max-height: 98%;
+    background-color: transparent;
+}
+
+#user-panorama-close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    line-height: 1;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.hide {
+    display: none;
+}
+
+/* background title */
+.page-title {
+    user-select: none;
+    /* 표준 */
+    -moz-user-select: none;
+    /* Firefox */
+    -webkit-user-select: none;
+    /* Safari 및 Chrome */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: -25%;
+    left: -100%;
+    font-size: 28em;
+    color: rgba(123, 154, 204, 0.1);
+    /* color: rgba(0, 0, 0, 0.03); */
+    white-space: nowrap;
+    transform: scaleX(1.15);
+    z-index: 0;
+    animation: moveRight 2s forwards;
+}
+
+.page-title-reverse {
+    user-select: none;
+    /* 표준 */
+    -moz-user-select: none;
+    /* Firefox */
+    -webkit-user-select: none;
+    /* Safari 및 Chrome */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    position: absolute;
+    bottom: -25%;
+    right: -100%;
+    font-size: 28em;
+    color: rgba(123, 154, 204, 0.1);
+    /* color: rgba(0, 0, 0, 0.03); */
+    white-space: nowrap;
+    transform: scaleX(1.15);
+    z-index: 0;
+    animation: moveLeft 2s forwards;
+}
+
+@keyframes moveRight {
+    to {
+        left: 0;
+    }
+}
+
+@keyframes moveLeft {
+    to {
+        right: 0;
+    }
+}

@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+    font-family: "MaplestoryOTFBold";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+        format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SBAggroB";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Freesentation-9Black";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2")
+        format("woff2");
+    font-weight: 900;
+    font-style: normal;
+}
+
+body {
+    overflow: hidden;
+    /* overflow-x: hidden; */
+    background-color: #fcf6f5;
+}
+
+.photo-container {
+    margin-left: 5em;
+    width: 100% - 5em;
+    height: 100%;
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+}
+
+.photo-title {
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font-family: "Poppins", "Freesentation-9Black", sans-serif;
+    font-size: 5em;
+    font-weight: 700;
+    color: #7b9acc;
+}
+
+.frame-selector {
+    /* position: relative; */
+    width: 1280px;
+    height: 175px;
+
+    z-index: 1;
+    background-color: transparent;
+
+    display: flex;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* scroll-behavior: smooth; */
+
+    padding: 10px;
+
+    margin-bottom: 10px;
+}
+
+.frame-selector::-webkit-scrollbar {
+    height: 8px;
+}
+
+.frame-selector::-webkit-scrollbar-track {
+    background: #fcf6f5;
+}
+
+.frame-selector img {
+    height: 150px;
+    width: 150px;
+
+    margin: 7px 7px;
+
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.frame-selector img.selected {
+    border-color: #7b9acc;
+}
+
+.webcam-container {
+    width: 1280px;
+    height: 480px;
+
+    display: flex;
+    flex-direction: row-reverse;
+
+    z-index: 1;
+}
+
+.webcam-controller {
+    width: 230px;
+    height: 100%;
+    margin-left: 90px;
+
+    /* z-index: 1; */
+    /* background-color: red; */
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.label-button {
+    width: 100%;
+    margin-top: 5px;
+    /* margin-right: 15px; */
+    display: block;
+    border-radius: 20px;
+    padding: 14px 45px;
+    background: #7b9acc;
+    color: #fcf6f5;
+    font-family: "Poppins", "Pretendard-Regular", sans-serif;
+    font-size: 1em;
+    transition: all 0.4s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.label-button:hover {
+    color: #222;
+    background-color: #b3cde8;
+}
+
+.webcam-wrapper {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    background-color: rgba(123, 154, 204, 0.3);
+}
+
+#photo-canvas,
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 480px;
+}
+
+.hide {
+    display: none;
+}
+
+/* sticker */
+
+.stickers-container {
+    width: 230px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 90px;
+}
+.stickers-container span {
+    font-family: "Poppins", "Freesentation-9Black", sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: #7b9acc;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.stickers-container img {
+    /* width: 64px;
+    height: 64px; */
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+}
+.sticker.selected {
+    border-color: #7b9acc;
+}
+
+.stickers-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.cursor-sticker {
+    position: absolute;
+    pointer-events: none;
+}
+
+/* background title */
+.page-title {
+    user-select: none;
+    /* 표준 */
+    -moz-user-select: none;
+    /* Firefox */
+    -webkit-user-select: none;
+    /* Safari 및 Chrome */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: -25%;
+    left: -100%;
+    font-size: 28em;
+    color: rgba(123, 154, 204, 0.1);
+    /* color: rgba(0, 0, 0, 0.03); */
+    white-space: nowrap;
+    transform: scaleX(1.15);
+    z-index: 0;
+    animation: moveRight 2s forwards;
+}
+
+.page-title-reverse {
+    user-select: none;
+    /* 표준 */
+    -moz-user-select: none;
+    /* Firefox */
+    -webkit-user-select: none;
+    /* Safari 및 Chrome */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    position: absolute;
+    bottom: -25%;
+    right: -100%;
+    font-size: 28em;
+    color: rgba(123, 154, 204, 0.1);
+    /* color: rgba(0, 0, 0, 0.03); */
+    white-space: nowrap;
+    transform: scaleX(1.15);
+    z-index: 0;
+    animation: moveLeft 2s forwards;
+}
+
+@keyframes moveRight {
+    to {
+        left: 0;
+    }
+}
+
+@keyframes moveLeft {
+    to {
+        right: 0;
+    }
+}
