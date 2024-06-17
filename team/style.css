@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  overflow: hidden;
+  background-color: #FCF6F5;
+}
+
+.team-container {
+  margin-left: 5em;
+  width: 100% - 5em;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-title {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-family: "Poppins", "Pretendard-Regular", sans-serif;
+  font-size: 5em;
+  font-weight: 700;
+  color: #7b9acc;
+}
+
+.team-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* Display as column */
+  gap: 20px;
+  /* Spacing between rows */
+  /* padding: 30px; */
+  /* margin-top: 30px; */
+  /* Container padding */
+  /* width: 1100px; */
+  text-align: center;
+  justify-content: center;
+}
+
+.team-row {
+  display: flex;
+  gap: 16px;
+}
+
+.team-member {
+  /* flex: 0 0 calc(50% - 16px); */
+  /* Two members per row */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  padding: 16px;
+  width: 200px;
+  max-width: 200px;
+  /* Max width of each member card */
+  height: 300px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-member img {
+  width: 180px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 40px;
+  /* Reduced margin */
+}
+
+.team-member h2 {
+  margin: 0;
+  font-size: 24px;
+  /* Adjusted font size */
+}
+
+.team-member p {
+  margin: 10px 0;
+  font-size: 18px;
+  /* Adjusted font size */
+  color: #666;
+
+}
+
+#team-container p,
+#team-container h2 {
+  font-family: "Roboto Condensed", "Pretendard-Regular", sans-serif;
+}
+
+#team-wrapper .page-title {
+  margin-left: 5%;
+}
+
+/* background title */
+.page-title {
+  user-select: none;
+  /* 표준 */
+  -moz-user-select: none;
+  /* Firefox */
+  -webkit-user-select: none;
+  /* Safari 및 Chrome */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  position: absolute;
+  top: -25%;
+  left: -100%;
+  font-size: 28em;
+  color: rgba(123, 154, 204, 0.1);
+  /* color: rgba(0, 0, 0, 0.03); */
+  white-space: nowrap;
+  transform: scaleX(1.15);
+  z-index: 0;
+  animation: moveRight 2s forwards;
+}
+
+.page-title-reverse {
+  user-select: none;
+  /* 표준 */
+  -moz-user-select: none;
+  /* Firefox */
+  -webkit-user-select: none;
+  /* Safari 및 Chrome */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  position: absolute;
+  bottom: -25%;
+  right: -100%;
+  font-size: 28em;
+  color: rgba(123, 154, 204, 0.1);
+  /* color: rgba(0, 0, 0, 0.03); */
+  white-space: nowrap;
+  transform: scaleX(1.15);
+  z-index: 0;
+  animation: moveLeft 2s forwards;
+}
+
+@keyframes moveRight {
+  to {
+    left: 0;
+  }
+}
+
+@keyframes moveLeft {
+  to {
+    right: 0;
+  }
+}

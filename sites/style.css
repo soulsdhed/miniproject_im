@@ -1,0 +1,165 @@
+/* ================================ 폰트 ======================================= */
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  overflow: hidden;
+  background-color: #FCF6F5;
+}
+
+/* ================================ div 조절 ======================================= */
+
+.sites-container {
+  margin-left: 5em;
+  width: 100% - 5em;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sites-title {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-family: "Poppins", "Pretendard-Regular", sans-serif;
+  font-size: 5em;
+  font-weight: 700;
+  color: #7b9acc;
+}
+
+.sites-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#container>div {
+  flex: 0 0 calc(50% - 10px);
+  margin: 10px;
+  /* 이미지 간격을 조절합니다. */
+}
+
+.imgs-wrapper {
+  display: flex;
+  justify-content: center;
+  /* 요소를 수평 가운데로 정렬합니다. */
+  align-content: center;
+}
+
+.imgs-wrapper img {
+  max-width: calc(100% - 10px);
+  max-height: 300px;
+  /* 이미지의 최대 높이를 지정합니다. */
+  height: auto;
+  /* 이미지의 높이를 자동으로 조절하여 비율을 유지합니다. */
+  margin: 10px 15px;
+  /* margin: 10px; /* 이미지 간격을 조절합니다. */
+}
+
+/* ================================ 배경글씨 ======================================= */
+
+/* background title */
+.page-title {
+  user-select: none;
+  /* 표준 */
+  -moz-user-select: none;
+  /* Firefox */
+  -webkit-user-select: none;
+  /* Safari 및 Chrome */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  position: absolute;
+  top: -25%;
+  left: -100%;
+  font-size: 28em;
+  color: rgba(123, 154, 204, 0.1);
+  /* color: rgba(0, 0, 0, 0.03); */
+  white-space: nowrap;
+  transform: scaleX(1.15);
+  z-index: -1;
+  animation: moveRight 2s forwards;
+}
+
+/* pagetitle class로 다시바꿔보기 */
+
+#page-title {
+  user-select: none;
+  /* 표준 */
+  -moz-user-select: none;
+  /* Firefox */
+  -webkit-user-select: none;
+  /* Safari 및 Chrome */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  position: absolute;
+  top: -25%;
+  left: -100%;
+  font-size: 28em;
+  color: rgba(123, 154, 204, 0.1);
+  /* color: rgba(0, 0, 0, 0.03); */
+  white-space: nowrap;
+  transform: scaleX(1.15);
+  z-index: -1;
+  animation: moveRight 2s forwards;
+}
+
+.page-title-reverse {
+  user-select: none;
+  /* 표준 */
+  -moz-user-select: none;
+  /* Firefox */
+  -webkit-user-select: none;
+  /* Safari 및 Chrome */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  position: absolute;
+  bottom: -25%;
+  right: -100%;
+  font-size: 28em;
+  color: rgba(123, 154, 204, 0.1);
+  /* color: rgba(0, 0, 0, 0.03); */
+  white-space: nowrap;
+  transform: scaleX(1.15);
+  z-index: -1;
+  animation: moveLeft 2s forwards;
+}
+
+@keyframes moveRight {
+  to {
+    left: 0;
+  }
+}
+
+@keyframes moveLeft {
+  to {
+    right: 0;
+  }
+}
+
+/* ============================================================================ */

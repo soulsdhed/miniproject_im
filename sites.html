@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="site">Sites</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./logo_black.png">
+
+  <link rel="stylesheet" href="./sites/style.css">
+  <link rel="stylesheet" href="./navigation/nav_style.css" />
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+  <!-- ================================네비게이터======================================= -->
+  <nav id="navbar">
+    <ul class="navbar-items flexbox-col">
+      <li class="navbar-logo flexbox-left">
+        <a class="navbar-item-inner flexbox" href="./index.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <img src="./logo.png" alt="" height="40px" width="40px" />
+          </div>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a id="logoutBtn" class="navbar-item-inner flexbox-left" href="./login.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon id="login_icon" name="log-in-outline" size="large"></ion-icon>
+          </div>
+          <span id="login_out" class="link-text" data-i18n="login">Login</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./about.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="newspaper-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="about">About Interactive</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./gallery.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="images-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="gallery">360VR Gallery</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./movie.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="film-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="movie">Interactive Movie</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./photo.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="camera-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="photo_title">Sticker Photo</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./game.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="game-controller-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="game">Quiz Game</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./sites.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="globe-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="site">Interactive Sites</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./team.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="people-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="team">Team</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" id="change-lang" href="#">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="language-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="language">KO (한국어)</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="sites-container">
+    <!-- ================================ 타이틀 ======================================= -->
+    <span class="sites-title" data-i18n="site">Interactive Sites</span>
+
+    <!-- ================================ 이미지 ======================================= -->
+    <div class="sites-wrapper">
+      <div class="imgs-wrapper">
+        <div id="flower">
+          <a href="https://2019.makemepulse.com/" target="_blank">
+            <img id="Flower_png" src="./sites/img/Nomadic_tribe.PNG" alt="">
+          </a>
+        </div>
+        <div id="humanMade">
+          <a href="https://humanmade.co.jp/" target="_blank">
+            <img id="HumanMade_png" src="./sites/img/Human_made.PNG" alt="">
+          </a>
+        </div>
+      </div><br>
+      <div class="imgs-wrapper">
+        <div id="google">
+          <a href="https://doodles.google/search/?form_tags=interactive%20game" target="_blank">
+            <img id="Google_png" src="./sites/img/Google_game.PNG" alt="">
+          </a>
+        </div>
+        <div id="salvator">
+          <a href="https://www.salvatorecasalino.it/interactive-resume/" target="_blank">
+            <img id="Salvator_png" src="./sites/img/Salvator.PNG" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================ 배경 글자 ======================================= -->
+  <div id="page-title">SITES</div>
+  <div class="page-title-reverse">SETIS</div>
+
+  <script src="./navigation/nav_script.js"></script>
+  <script src="./sites/script.js"></script>
+</body>
+
+</html>

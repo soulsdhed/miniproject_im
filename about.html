@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="about_title">About Interactive Media</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./logo_black.png">
+
+  <link rel="stylesheet" href="./about/style.css" />
+  <link rel="stylesheet" href="./navigation/nav_style.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <!-- 사이드바 nav -->
+  <nav id="navbar">
+    <ul class="navbar-items flexbox-col">
+      <li class="navbar-logo flexbox-left">
+        <a class="navbar-item-inner flexbox" href="./index.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <img src="./logo.png" alt="" height="40px" width="40px" />
+          </div>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a id="logoutBtn" class="navbar-item-inner flexbox-left" href="./login.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon id="login_icon" name="log-in-outline" size="large"></ion-icon>
+          </div>
+          <span id="login_out" class="link-text" data-i18n="login">Login</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./about.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="newspaper-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="about">About Interactive</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./gallery.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="images-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="gallery">360VR Gallery</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./movie.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="film-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="movie">Interactive Movie</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./photo.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="camera-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="photo_title">Sticker Photo</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./game.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="game-controller-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="game">Quiz Game</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./sites.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="globe-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="site">Interactive Sites</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./team.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="people-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="team">Team</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" id="change-lang" href="#">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="language-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="language">KO (한국어)</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="about-container">
+    <div class="about-title" data-i18n="about_title">인터랙티브 미디어란</div>
+
+    <div class="slideshow-container">
+      <div class="slideshow">
+        <div class="image-container">
+          <img src="./about/image/img1.png" />
+        </div>
+        <div class="text-container">
+          <h1 data-i18n="mini_title1">
+            나무벽에 손을 대면 무슨 일이 ?
+          </h1>
+
+          <p data-i18n="mini_con1">
+            디자인 기반의 스튜디오 Dalziel and Pow에서는 런던에서 열린<br />
+            <리테일 디자인 엑스포 2015>에서 ‘전자잉크(E-ink)’를 활용하여<br />
+              주목할 만한 디스플레이 작업을 만들었습니다. <br />
+              사용자는 회로와 움직이는 다양한 요소로 완성된 부스 벽의 일러스트
+              이미지를 터치할 수 있습니다. <br />2d 그래픽에 손을 대면 빛과 소리가
+              나니 마치 만화 속의 주인공들이 현실로 걸어 나온 것 같은 즐거운
+              경험을 할 수 있는데요,<br />
+              사용자는 스위치를 켜 전구의 불을 밝히거나 실로폰을 연주하기도 하고,
+              손을 대면 광선을 쏘는 경험을 할 수 있습니다. <br />
+          </p>
+        </div>
+      </div>
+      <div class="slideshow">
+        <div class="image-container">
+          <img src="./about/image/img2.jpeg" />
+        </div>
+        <div class="text-container">
+          <h1 data-i18n="mini_title2">
+            인터랙티브 미디어란 무엇일까요?
+          </h1>
+          <p data-i18n="mini_con2">
+            앞에서 보신 터치하는 벽은 대화형 매체 ,<br />
+            즉 텍스트, 그래픽, 애니메이션, 영상, 소리와 같은 콘텐츠를 눌러서<br />
+            사용자의 동작에 반응하는 디지털 컴퓨터 기반 시스템 상의 제품과<br />
+            용역을 가리키며 대화식 매체, 대화형 미디어, 인터랙티브
+            미디어(interactive media, 상호작용하는 매체)라고도 부릅니다. <br />
+            우리가 흔히 접하는 웹사이트나 게임 등이 이 인터랙티브 미디어의 한
+            종류인데요. 요즘에는 웹 디바이스 안에서 뿐만 아니라 3차원의 물리적인
+            공간에도 적용되는 경우가 많아지고 있습니다
+          </p>
+        </div>
+      </div>
+      <div class="slideshow">
+        <div class="image-container">
+          <img src="./about/image/img3.jpeg" />
+        </div>
+        <div class="text-container">
+          <h1 data-i18n="mini_title3">
+            인터랙티브 미디어에 필요한 것은 ?
+          </h1>
+          <p data-i18n="mini_con3">
+            대화형 매체에 반드시 있어야 하는 기능은 바로 상호 관계입니다. <br />
+            사용자와 기계는 각기 어느 정도의 역할(상호작용)이 있습니다. <br />
+            대부분의 대화형 컴퓨터 시스템은 인간의 목적을 위한 것이며 사람이
+            살아가는 환경 속의 인간과 상호 작용합니다. <br />마노비치는 "컴퓨터
+            기반 매체와 관련하여 상호작용이라는 개념은 쓸데없는 되풀이일 뿐이다.
+            ... 그러므로 컴퓨터 매체가 "상호 작용적"이라고 이야기하는 것은
+            의미가 없다. 이는 단순히 컴퓨터에 대한 가장 기본적인 사실을 말해주는
+            것 뿐이다."라고 불평하기도 하였습니다. 그럼에도 이 낱말은 현실과
+            기술의 실체를 나타내는 데 유용합니다.
+          </p>
+        </div>
+      </div>
+      <!-- 이전/다음 버튼 -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- 점 표시 -->
+    <div style="text-align: center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+  </div>
+
+  <script src="./navigation/nav_script.js"></script>
+  <script src="./about/script.js"></script>
+</body>
+
+</html>

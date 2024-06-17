@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="photo_title">Sticker Photo - Interactive Media</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./logo_black.png">
+
+    <link rel="stylesheet" href="./photozone/style.css">
+    <link rel="stylesheet" href="./navigation/nav_style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <ul class="navbar-items flexbox-col">
+            <li class="navbar-logo flexbox-left">
+                <a class="navbar-item-inner flexbox" href="./index.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <img src="./logo.png" alt="" height="40px" width="40px" />
+                    </div>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a id="logoutBtn" class="navbar-item-inner flexbox-left" href="./login.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon id="login_icon" name="log-in-outline" size="large"></ion-icon>
+                    </div>
+                    <span id="login_out" class="link-text" data-i18n="login">Login</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./about.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="newspaper-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="about">About Interactive</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./gallery.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="images-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="gallery">360VR Gallery</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./movie.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="film-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="movie">Interactive Movie</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./photo.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="camera-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="photo_title">Sticker Photo</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./game.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="game-controller-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="game">Quiz Game</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./sites.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="globe-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="site">Interactive Sites</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./team.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="people-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="team">Team</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" id="change-lang" href="#">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="language-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="language">KO (한국어)</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- photo zone -->
+    <div class="page-title">PHOTO</div>
+    <div class="page-title-reverse">OTOHP</div>
+
+    <div class=photo-container>
+        <span class="photo-title" data-i18n="photo_title">Sticker Photo</span>
+
+        <div class="frame-selector" id="frame-selector">
+            <!-- frame img 동적 생성 -->
+        </div>
+
+        <div class="webcam-container">
+            <!-- 버튼 -->
+            <div class="webcam-controller">
+                <label id="download-button" class="label-button hide" data-i18n="download">Download</label>
+                <label id="take-photo-button" class="label-button hide" data-i18n="take_photo">Take Photo</label>
+                <label id="start-button" class="label-button" data-i18n="start_webcam">Start Webcam</label>
+            </div>
+
+            <!-- 웹캡 -->
+            <div class="webcam-wrapper">
+                <video id="webcam" class="hide" width="640" height="480" autoplay></video>
+                <canvas id="overlay" class="hide"></canvas>
+                <canvas id="photo-canvas" class="hide"></canvas>
+                <img id="cursor-sticker" class="cursor-sticker hide">
+            </div>
+
+            <!-- 스티커 영역 -->
+            <div class="stickers-container">
+                <span data-i18n="stickers">Stickers</span>
+                <div class="stickers-content" id="stickers-content">
+                    <!-- sticker img 동적 생성 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./navigation/nav_script.js"></script>
+    <script src="./photozone/script.js"></script>
+</body>
+
+</html>

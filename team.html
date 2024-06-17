@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="team">Team</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./logo_black.png">
+
+    <link rel="stylesheet" href="./navigation/nav_style.css" />
+    <link rel="stylesheet" href="./team/style.css" />
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <ul class="navbar-items flexbox-col">
+            <li class="navbar-logo flexbox-left">
+                <a class="navbar-item-inner flexbox" href="./index.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <img src="./logo.png" alt="" height="40px" width="40px" />
+                    </div>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a id="logoutBtn" class="navbar-item-inner flexbox-left" href="./login.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon id="login_icon" name="log-in-outline" size="large"></ion-icon>
+                    </div>
+                    <span id="login_out" class="link-text" data-i18n="login">Login</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./about.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="newspaper-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="about">About Interactive</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./gallery.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="images-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="gallery">360VR Gallery</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./movie.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="film-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="movie">Interactive Movie</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./photo.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="camera-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="photo_title">Sticker Photo</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./game.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="game-controller-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="game">Quiz Game</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./sites.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="globe-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="site">Interactive Sites</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="./team.html">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="people-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="team">Team</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" id="change-lang" href="#">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="language-outline" size="large"></ion-icon>
+                    </div>
+                    <span class="link-text" data-i18n="language">KO (한국어)</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="team-container">
+        <div class="page-title">TEAM</div>
+        <div class="page-title-reverse">MAET</div>
+
+        <span class="team-title" data-i18n="team_title">Team Introduction</span>
+        <div class="team-wrapper" id="team-wrapper">
+            <!-- Two rows of team members -->
+        </div>
+    </div>
+
+
+    <script src="./navigation/nav_script.js"></script>
+    <script src="./team/script.js"></script>
+</body>
+
+</html>

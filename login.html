@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="login_title">Register / Login</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./logo_black.png">
+
+
+  <link rel="stylesheet" href="./login/style.css" />
+  <link rel="stylesheet" href="./navigation/nav_style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- 파이어베이스 스크립트 -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+</head>
+
+<body>
+  <!-- 사이드바 nav -->
+  <nav id="navbar">
+    <ul class="navbar-items flexbox-col">
+      <li class="navbar-logo flexbox-left">
+        <a class="navbar-item-inner flexbox" href="./index.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <img src="./logo.png" alt="" height="40px" width="40px" />
+          </div>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a id="logoutBtn" class="navbar-item-inner flexbox-left" href="./login.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon id="login_icon" name="log-in-outline" size="large"></ion-icon>
+          </div>
+          <span id="login_out" class="link-text" data-i18n="login">Login</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./about.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="newspaper-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="about">About Interactive</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./gallery.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="images-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="gallery">360VR Gallery</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./movie.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="film-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="movie">Interactive Movie</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./photo.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="camera-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="photo_title">Sticker Photo</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./game.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="game-controller-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="game">Quiz Game</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./sites.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="globe-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="site">Interactive Sites</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./team.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="people-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="team">Team</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" id="change-lang" href="#">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="language-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="language">KO (한국어)</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="login-container">
+
+  </div>
+  <div class="form-title" data-i18n="login_title">Register / Login</div>
+  <form name="frm" action="#" onsubmit="return false;">
+    <div class="form signup">
+      <div class="form-header">
+        <div class="show-signup" data-i18n="join">Register</div>
+        <div class="show-signin" data-i18n="login">Login</div>
+      </div>
+      <div class="arrow"></div>
+      <div class="form-elements">
+        <div class="form-element">
+          <input type="text" name="id" data-i18n="inputId" placeholder="Please enter your ID" />
+        </div>
+        <div class="form-element">
+          <input type="password" name="pw" data-i18n="inputPw" placeholder="Please enter your password" />
+        </div>
+        <div class="form-element">
+          <input type="password" data-i18n="inputPpw" placeholder="Please re-enter your password" />
+        </div>
+        <div class="form-element">
+          <input type="text" name="name" data-i18n="inputName" placeholder="Please enter your name" />
+        </div>
+        <div class="form-element">
+          <input type="tel" name="tel" id="tel-input" data-i18n="inputTel" placeholder="000-0000-0000"
+            pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" maxlength="13" />
+        </div>
+        <div class="form-element">
+          <input type="email" name="email" data-i18n="inputEmail" placeholder="example@example.com" />
+        </div>
+        <button type="button" id="submit-btn" data-i18n="join">
+          Register
+        </button>
+        <button type="button" id="submit-btn-login" data-i18n="login">
+          Login
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <script src="./navigation/nav_script.js"></script>
+  <script src="./login/script.js"></script>
+  <script src="./login/fireBase.js"></script>
+</body>
+
+</html>

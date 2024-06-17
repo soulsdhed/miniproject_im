@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="game">Quiz Game</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./logo_black.png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="./navigation/nav_style.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- 파이어베이스 스크립트 -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+  <link rel="stylesheet" href="./game/style.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <ul class="navbar-items flexbox-col">
+      <li class="navbar-logo flexbox-left">
+        <a class="navbar-item-inner flexbox" href="./index.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <img src="./logo.png" alt="" height="40px" width="40px" />
+          </div>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a id="logoutBtn" class="navbar-item-inner flexbox-left" href="./login.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon id="login_icon" name="log-in-outline" size="large"></ion-icon>
+          </div>
+          <span id="login_out" class="link-text" data-i18n="login">Login</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./about.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="newspaper-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="about">About Interactive</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./gallery.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="images-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="gallery">360VR Gallery</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./movie.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="film-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="movie">Interactive Movie</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./photo.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="camera-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="photo_title">Sticker Photo</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./game.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="game-controller-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="game">Quiz Game</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./sites.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="globe-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="site">Interactive Sites</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./team.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="people-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="team">Team</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" id="change-lang" href="#">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="language-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="language">KO (한국어)</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="game-container" class="game-container">
+    <div class="game-wrapper">
+
+      <div class="game-content">
+        <div class="game-title" data-i18n="game">Quiz Game</div>
+        <div id="insertcoin">
+          <p id="coinP" data-i18n="insertcoin">INSERT COIN</p>
+        </div>
+        <button id="modalOpen" data-i18n="gamestart">Game Start</button>
+      </div>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p class="question" id="question" data-i18n="question">q1</p>
+          <div id="answerBox">
+            <div class="progress-container">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <button class="answer" onclick="checkAnswer(1)">answer1</button>
+            <button class="answer" onclick="checkAnswer(0)">answer2</button>
+          </div>
+          <div class="score-wrapper">
+            <span class="score-label" data-i18n="score">score : </span>
+            <span class="score-label" id="score">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ranking Section -->
+      <div id="ranking">
+        <h3 data-i18n="ranking">Live Ranking</h3>
+        <ul id="rankingList">
+          <!-- 랭킹 항목들이 여기에 추가됩니다 -->
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./navigation/nav_script.js"></script>
+  <script src="./game/script.js"></script>
+</body>
+
+</html>

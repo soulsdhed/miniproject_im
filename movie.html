@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="movie">Interactive Movie</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./logo_black.png">
+
+  <link rel="stylesheet" href="./movie/style.css">
+  <link rel="stylesheet" href="./navigation/nav_style.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <nav id="navbar">
+    <ul class="navbar-items flexbox-col">
+      <li class="navbar-logo flexbox-left">
+        <a class="navbar-item-inner flexbox" href="./index.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <img src="./logo.png" alt="" height="40px" width="40px" />
+          </div>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a id="logoutBtn" class="navbar-item-inner flexbox-left" href="./login.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon id="login_icon" name="log-in-outline" size="large"></ion-icon>
+          </div>
+          <span id="login_out" class="link-text" data-i18n="login">Login</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./about.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="newspaper-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="about">About Interactive</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./gallery.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="images-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="gallery">360VR Gallery</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./movie.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="film-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="movie">Interactive Movie</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./photo.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="camera-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="photo_title">Sticker Photo</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./game.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="game-controller-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="game">Quiz Game</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./sites.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="globe-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="site">Interactive Sites</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" href="./team.html">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="people-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="team">Team</span>
+        </a>
+      </li>
+      <li class="navbar-item flexbox-left">
+        <a class="navbar-item-inner flexbox-left" id="change-lang" href="#">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <ion-icon name="language-outline" size="large"></ion-icon>
+          </div>
+          <span class="link-text" data-i18n="language">KO (한국어)</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="movie-container">
+    <span class="movie-title" data-i18n="movie">인터랙티브 영화</span>
+
+    <div class="movie-wrapper">
+      <iframe id="one" class="one" src="https://www.youtube.com/embed/TOv-Uq7XffM"
+        title="Parasite Choi Woo Shik AORB by Cass [선택희비극, 아오르비]" width="900px" height="500px" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <button id="movieOpen" class="movie-button" data-i18n="next_btn">다음</button>
+
+    <!-- The Modal -->
+    <div id="myMovie" class="movie-modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <!-- close button -->
+        <span class="modal-close-btn">&times;</span>
+
+        <div class="select-container">
+
+          <div class="select-wrapper">
+            <img id="imgA" width="500px" height="320px" src="https://img.youtube.com/vi/ojXIYN1m6s8/0.jpg" class="a1"
+              title="YAASS 1-A" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></img>
+            <button class="movie-button" id="btna" data-i18n="select_btn">선택</button>
+          </div>
+
+          <div class="select-wrapper">
+            <img id="imgB" width="500px" height="320px" src="https://img.youtube.com/vi/CX0aX7tT6tA/0.jpg" class="b1"
+              title="YAASS 1-B" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></img>
+            <button class="movie-button" id="btnb" data-i18n="select_btn">선택</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="bomb" class="movie-modal">
+      <div class="modal-content">
+        <span id="bomb-close" class="modal-close-btn">&times;</span>
+        <div class="bomb_pic">
+          <p class="restart" data-i18n="movie_result">최종 결과입니다.<br>다른 결과를 보고 싶으면 처음부터 다시 시작해주세요.</p>
+          <a href="./movie.html" target="_self">
+            <img src="./movie/img/rotate.png" class="reload">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-title">MOVIE</div>
+  <div class="page-title-reverse">EIVOM</div>
+
+  <script src="./navigation//nav_script.js"></script>
+  <script src="./movie/script.js"></script>
+</body>
+
+</html>
