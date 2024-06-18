@@ -152,6 +152,9 @@ fileInput.addEventListener("change", (event) => {
 
         // 파일을 읽기 (실제 읽기 동작)
         reader.readAsDataURL(file);
+
+        // 같은 파일 재작동을 위한 값 초기화
+        event.target.value = "";
     }
 });
 
